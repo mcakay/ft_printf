@@ -1,11 +1,9 @@
 NAME=libftprintf.a
 LIBFT=libft/libft.a
 
-SRCS= ft_printf.c ft_reset_print.c ft_flag.c ft_check_identifier.c\
-ft_put.c ft_reset_print.c ./flags/ft_dash_flag.c ./flags/ft_dot_flag.c\
-./flags/ft_number_flag.c ./flags/ft_plus_flag.c ./flags/ft_sharp_flag.c\
-./flags/ft_space_flag.c ./flags/ft_zero_flag.c ft_utils.c ft_return.c\
-ft_convert.c
+SRCS= ft_printf.c ft_reset_print.c ft_put.c ft_flag.c ft_return.c ft_utils.c\
+ft_dash_flag.c ft_width_flag.c ft_calc_size.c ft_zero_flag.c ft_precision_flag.c\
+ft_convert.c ft_plus_flag.c ft_space_flag.c ft_sharp_flag.c
 
 OBJS= $(SRCS:.c=.o)
 
@@ -17,7 +15,7 @@ CFLAGS= -Wall -Werror -Wextra
 
 all: $(NAME)
 
-bonus: all
+bonus: all;
 
 $(NAME): $(OBJS)
 	make bonus -C ./libft
