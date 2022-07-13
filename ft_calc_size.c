@@ -1,8 +1,8 @@
 #include "ft_printf.h"
 
-int ft_calc_size(int nb)
+int	ft_calc_size(int nb)
 {
-    int	counter;
+	int		counter;
 	long	nbr;
 
 	nbr = nb;
@@ -11,8 +11,6 @@ int ft_calc_size(int nb)
 	{
 		nbr *= -1;
 		counter++;
-
-		
 	}
 	while (nbr >= 10)
 	{
@@ -23,9 +21,9 @@ int ft_calc_size(int nb)
 	return (counter);
 }
 
-int ft_calc_size_unsigned(unsigned int nb)
+int	ft_calc_size_unsigned(unsigned int nb)
 {
-    int	counter;
+	int	counter;
 
 	counter = 0;
 	while (nb >= 10)
@@ -37,7 +35,7 @@ int ft_calc_size_unsigned(unsigned int nb)
 	return (counter);
 }
 
-void	ft_calc_size_hex(t_print **print, unsigned int nb)
+void	ft_calc_size_hex(t_print *print, unsigned int nb)
 {
 	if (nb >= 16)
 	{
@@ -45,10 +43,10 @@ void	ft_calc_size_hex(t_print **print, unsigned int nb)
 		ft_calc_size_hex(print, nb % 16);
 	}
 	else
-		(*print)->val_len++;
+		print->val_len++;
 }
 
-void	ft_calc_size_p(t_print **print, unsigned long nb)
+void	ft_calc_size_p(t_print *print, unsigned long nb)
 {
 	if (nb >= 16)
 	{
@@ -56,5 +54,5 @@ void	ft_calc_size_p(t_print **print, unsigned long nb)
 		ft_calc_size_p(print, nb % 16);
 	}
 	else
-		(*print)->val_len++;
+		print->val_len++;
 }
