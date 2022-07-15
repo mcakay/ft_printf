@@ -1,17 +1,18 @@
 NAME=libftprintf.a
 LIBFT=libft/libft.a
 
-SRCS= ft_printf.c ft_reset_print.c ft_put.c ft_flag.c ft_return.c ft_utils.c\
-ft_dash_flag.c ft_width_flag.c ft_calc_size.c ft_zero_flag.c ft_precision_flag.c\
-ft_convert.c ft_plus_flag.c ft_space_flag.c ft_sharp_flag.c
+SRCS= src/ft_printf.c src/ft_reset_print.c src/ft_put.c src/ft_return.c src/ft_utils.c\
+src/ft_convert.c
 
-BONUS_SRCS= ft_printf.c ft_reset_print.c ft_put.c ft_flag.c ft_return.c ft_utils.c\
-ft_dash_flag.c ft_width_flag.c ft_calc_size.c ft_zero_flag.c ft_precision_flag.c\
-ft_convert.c ft_plus_flag.c ft_space_flag.c ft_sharp_flag.c
+BONUS_SRCS= srcb/ft_calc_size_bonus.c srcb/ft_convert_bonus.c srcb/ft_dash_flag_bonus.c\
+srcb/ft_flag_bonus.c srcb/ft_plus_flag_bonus.c srcb/ft_precision_flag_bonus.c\
+srcb/ft_printf_bonus.c srcb/ft_put_bonus.c srcb/ft_reset_print_bonus.c\
+srcb/ft_return_bonus.c srcb/ft_sharp_flag_bonus.c srcb/ft_space_flag_bonus.c\
+srcb/ft_utils_bonus.c srcb/ft_width_flag_bonus.c srcb/ft_zero_flag_bonus.c
 
 OBJS= $(SRCS:.c=.o)
 
-BONUS_OBJS= $(SRCS:.c=.o)
+BONUS_OBJS= $(BONUS_SRCS:.c=.o)
 
 CC=gcc
 
@@ -27,16 +28,16 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
 	make bonus -C ./libft
 	cp libft/libft.a $(NAME)
-	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+	ar rc $(NAME) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re bonus
