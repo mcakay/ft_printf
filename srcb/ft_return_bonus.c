@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_return_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 11:17:40 by mcakay            #+#    #+#             */
+/*   Updated: 2022/07/25 15:45:02 by mcakay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf_bonus.h"
 
 void	ft_putchar_rtn(t_print *print, char c, int fd)
@@ -13,11 +25,6 @@ void	ft_putstr_rtn(t_print *print, char *str, int fd)
 	i = 0;
 	if (print->precision && print->spec == 's')
 	{
-		if (print->null && print->precision_len < print->val_len)
-		{
-			print->return_val = print->width;
-			return ;
-		}
 		while (i < print->precision_len && *(str + i))
 		{
 			ft_putchar_rtn(print, *(str + i), fd);

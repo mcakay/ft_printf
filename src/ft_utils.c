@@ -1,12 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 11:35:43 by mcakay            #+#    #+#             */
+/*   Updated: 2022/07/25 11:41:31 by mcakay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_null_control(t_print *print)
 {
 	if (print->spec == 's' && !print->sval)
-	{
 		print->sval = "(null)";
-		print->null = 1;
-	}
-	if (print->spec == 'p' && !print->pval)
-		print->null = 1;
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 11:18:01 by mcakay            #+#    #+#             */
+/*   Updated: 2022/07/25 11:41:39 by mcakay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <stdarg.h>
@@ -13,7 +25,6 @@ typedef struct s_print
 	unsigned int	uval;
 	unsigned int	xval;
 	unsigned long	pval;
-	int				null;
 	int				return_val;
 }	t_print;
 

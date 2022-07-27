@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_reset_print_bonus.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 11:17:38 by mcakay            #+#    #+#             */
+/*   Updated: 2022/07/25 11:47:11 by mcakay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf_bonus.h"
 
 void	ft_reset_print(t_print *print)
@@ -19,6 +31,5 @@ void	ft_reset_print(t_print *print)
 	print->dval = 0;
 	print->xval = 0;
 	print->pval = 0;
-	print->null = 0;
 	print->noprint = 0;
 }

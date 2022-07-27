@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_precision_flag_bonus.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 11:17:29 by mcakay            #+#    #+#             */
+/*   Updated: 2022/07/25 12:34:09 by mcakay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf_bonus.h"
 
 void	ft_precision_flag(t_print *print, int *i, char *str)
@@ -30,7 +42,7 @@ void	ft_apply_precision_flag(t_print *print)
 			print->zero_len = print->precision_len;
 		}
 	}
-	if (print->spec == 's' && !print->null)
+	if (print->spec == 's')
 	{
 		if (print->val_len < print->precision_len)
 			print->precision_len = print->val_len;

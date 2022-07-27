@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_flag_bonus.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 11:17:25 by mcakay            #+#    #+#             */
+/*   Updated: 2022/07/25 12:38:27 by mcakay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf_bonus.h"
 
 void	ft_apply_flags(t_print *print)
 {
+	ft_calc_val_len(print);
 	ft_null_control(print);
-	if (!print->null)
-		ft_calc_val_len(print);
 	if (print->precision)
 		ft_apply_precision_flag(print);
 	ft_sign_control(print);

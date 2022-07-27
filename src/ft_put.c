@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_put.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 11:18:03 by mcakay            #+#    #+#             */
+/*   Updated: 2022/07/25 11:42:04 by mcakay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_puts(t_print *print, va_list args)
@@ -43,12 +55,6 @@ void	ft_puts3(t_print *print, va_list args)
 	if (print->spec == 'p')
 	{
 		print->pval = va_arg(args, unsigned long);
-		ft_null_control(print);
-		if (print->null)
-		{
-			ft_putstr_rtn(print, "(nil)", 1);
-			return ;
-		}
 		ft_putstr_rtn(print, "0x", 1);
 		ft_convert_p(print, print->pval, 1);
 	}

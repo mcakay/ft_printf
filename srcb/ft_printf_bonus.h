@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 11:17:34 by mcakay            #+#    #+#             */
+/*   Updated: 2022/07/25 12:33:51 by mcakay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_BONUS_H
 # define FT_PRINTF_BONUS_H
 # include <stdarg.h>
@@ -23,7 +35,6 @@ typedef struct s_print
 	unsigned int	uval;
 	unsigned int	xval;
 	unsigned long	pval;
-	int				null;
 	int				return_val;
 	int				noprint;
 }	t_print;

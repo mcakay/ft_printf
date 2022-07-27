@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_put_bonus.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 11:17:36 by mcakay            #+#    #+#             */
+/*   Updated: 2022/07/25 11:46:24 by mcakay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf_bonus.h"
 
 void	ft_puts(t_print *print, va_list args)
@@ -53,11 +65,6 @@ void	ft_puts3(t_print *print, va_list args)
 	{
 		print->pval = va_arg(args, unsigned long);
 		ft_apply_flags(print);
-		if (print->null)
-		{
-			ft_putstr_rtn(print, "(nil)", 1);
-			return ;
-		}
 		if (!print->zero)
 			ft_putstr_rtn(print, "0x", 1);
 		ft_convert_p(print, print->pval, 1);

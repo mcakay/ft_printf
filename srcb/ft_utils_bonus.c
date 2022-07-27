@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utils_bonus.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcakay <mcakay@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 11:17:47 by mcakay            #+#    #+#             */
+/*   Updated: 2022/07/25 15:32:00 by mcakay           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf_bonus.h"
 
 void	ft_sign_control(t_print *print)
@@ -28,12 +40,6 @@ void	ft_null_control(t_print *print)
 	{
 		print->sval = "(null)";
 		print->val_len = 6;
-		print->null = 1;
-	}
-	if (print->spec == 'p' && !print->pval)
-	{
-		print->val_len = 5;
-		print->null = 1;
 	}
 }
 
@@ -49,7 +55,7 @@ void	ft_calc_val_len(t_print *print)
 		print->val_len = ft_calc_size_unsigned(print->uval);
 	if (print->spec == 'x' || print->spec == 'X')
 		ft_calc_size_hex(print, print->xval);
-	if (print->spec == 'p' && print->pval)
+	if (print->spec == 'p')
 	{
 		ft_calc_size_p(print, print->pval);
 		print->val_len += 2;
